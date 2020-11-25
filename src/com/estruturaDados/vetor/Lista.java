@@ -80,6 +80,10 @@ public class Lista<T> {
 		}
 		return -1;
 	}
+	
+	public boolean contem(T tipo) {
+		return busca(tipo) > -1;
+	}
 
 	// busca de um elemento pela posição
 	public T buscarElementoPosicao(int posicao) {
@@ -90,10 +94,10 @@ public class Lista<T> {
 	}
 
 	// busca de um elemento por parametro
-	public Object buscaUmElementoObject(Object nome) {
+	public String buscaUmElementoObject(T nome) {
 		for (int i = 0; i < this.qtd; i++) {
 			if (this.elementos[i].equals(nome)) {
-				return this.elementos[i];
+				return (String) this.elementos[i];
 			}
 		}
 		return "Elemento não existe";
