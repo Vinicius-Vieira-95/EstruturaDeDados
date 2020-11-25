@@ -12,7 +12,7 @@ public class Aula5 {
 		vetor.addcionar("elemento2");
 		vetor.addcionar("elemento3");
 		
-		System.out.println(vetor.buscaUmElementoString("elemento2"));
+		System.out.println(vetor.buscaUmElementoObject("elemento2"));
 		
 		System.out.println(vetor.buscarElementoPosicao(0));
 

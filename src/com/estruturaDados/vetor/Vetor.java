@@ -3,16 +3,16 @@ package com.estruturaDados.vetor;
 public class Vetor {
 
 	// tipo de vetor
-	private String[] elementos;
+	private Object[] elementos;
 	int qtd;
 
 	public Vetor(int tamanho) {
-		this.elementos = new String[tamanho];
+		this.elementos = new Object[tamanho];
 		this.qtd = 0;
 	}
 
 	// adcionando elemento no vetor
-	public boolean addcionar(String elemento) {
+	public boolean addcionar(Object elemento) {
 		this.aumentaCapacidade();
 		if (this.qtd < this.elementos.length) {
 			this.elementos[qtd] = elemento;
@@ -23,7 +23,7 @@ public class Vetor {
 	}
 	
 	//adcionando valor em qualquer posição
-	public boolean adciona(String s, int posicao) {
+	public boolean adciona(Object s, int posicao) {
 		if(!(posicao >= 0 && posicao < qtd)) {
 			throw new IllegalArgumentException("Posição invalida, valor acima da quantidade");
 		}
@@ -41,15 +41,15 @@ public class Vetor {
 		if(posicao > qtd && posicao < 0) {
 			throw new IllegalArgumentException("Posição não existe");
 		}
-		for(int i = posicao ; i <= qtd; i++) {
+		for(int i = posicao ; i < qtd; i++) {
 			this.elementos[i - 1] = this.elementos[i];
 		}
 		this.qtd--;
 		return true;
 	}
 	
-	//excluir elemento por string
-	public boolean removerPorNome(String nome) {
+	//excluir elemento por object
+	public boolean removerPorElemento(Object nome) {
 		for(int i = 0; i < qtd; i++) {
 			if(this.elementos[i].equals(nome)) {
 				this.elementos[i] = this.elementos[i + 1];
@@ -64,15 +64,15 @@ public class Vetor {
 	}
 	
 	//busca de um elemento pela posição
-	public String buscarElementoPosicao(int posicao ) {
+	public Object buscarElementoPosicao(int posicao ) {
 		if(!(posicao >= 0 && posicao < qtd)) {
 			throw new IllegalArgumentException("Posição invalida");
 		}
 		return this.elementos[posicao];
 	}
 	
-	//busca de um elemento por String
-	public String buscaUmElementoString(String nome) {
+	//busca de um elemento por parametro
+	public Object buscaUmElementoObject(Object nome) {
 		for(int i = 0; i < this.qtd ; i ++) {
 			if(this.elementos[i].equals(nome)) {
 				return this.elementos[i];
@@ -85,7 +85,7 @@ public class Vetor {
 	private void aumentaCapacidade() {
 		if(this.qtd == this.elementos.length) {
 			//tipo de vetor atribuido
-			String[] novoElemento = new String[this.elementos.length * 2];  
+			Object[] novoElemento = new Object[this.elementos.length * 2];  
 			for(int i = 0; i< this.elementos.length; i++) {
 				novoElemento[i] = this.elementos[i];
 			}	

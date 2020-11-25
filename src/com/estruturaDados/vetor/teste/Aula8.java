@@ -17,7 +17,7 @@ public class Aula8 {
 		
 		System.out.println(vetor.toString());
 		
-		vetor.removerPorNome("C");
+		vetor.removerPorElemento("C");
 		
 		System.out.println(vetor.toString());
 		
