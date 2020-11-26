@@ -81,6 +81,18 @@ public class Lista<T> {
 		return -1;
 	}
 	
+	public T busca(int posicao) {
+		if(!(posicao  >=0 && posicao < this.qtd)) {
+			throw new IllegalArgumentException("Posição inalda");
+		}
+		return this.elementos[posicao];
+	}
+	
+	
+	public T obtem(int posicao) {
+		return this.busca(posicao);
+	}
+	
 	public boolean contem(T tipo) {
 		return busca(tipo) > -1;
 	}
