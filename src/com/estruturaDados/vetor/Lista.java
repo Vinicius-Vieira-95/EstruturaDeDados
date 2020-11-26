@@ -88,7 +88,6 @@ public class Lista<T> {
 		return this.elementos[posicao];
 	}
 	
-	
 	public T obtem(int posicao) {
 		return this.busca(posicao);
 	}
