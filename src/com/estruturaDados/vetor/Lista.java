@@ -125,6 +125,17 @@ public class Lista<T> {
 			this.elementos = novoElemento;
 		}
 	}
+	
+	public void limpa() {
+		
+		//this.elementos = (T[]) new Object[this.elementos.length];
+		
+		
+		for(int i = 0; i < this.qtd ; i++) {
+			this.elementos[i] = null;
+		}
+		this.qtd = 0;
+	}
 
 	// imprimir o vetor até o ultimo indice.
 	public String toString() {
