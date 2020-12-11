@@ -1,49 +1,37 @@
 package com.estruturaDeDados.Fila;
 
-public class Fila {
+import com.estruturaDados.base.EstruturaEstatica;
 
-	// tipo de vetor
-	private String[] fila;
+public class Fila<T> extends EstruturaEstatica<T>{
 	
-	private int inicio;
-	private int fim;
-
+	final int POSICAO = 0;
+	
+	public Fila() {
+		super();
+	}
+	
 	public Fila(int tamanho) {
-		this.fila = new String[tamanho];
-		//index da fila
-		inicio = 0;
-		fim = 0;
-
+		super(tamanho);
 	}
 	
-	public void Inserir(String nome) {
-		if(fim >= fila.length) {
-			fim = 0;
-		}
-		fila[fim] = nome;
-		fim++;
-	}
-	public void remover() {
-		if(inicio == fila.length) {
-			inicio = 0;
-		}
-		fila[inicio] = "";
-		inicio++;
+	//metod que coloco sempre no fim da fila
+	public void InserirNaFila(T elemento) {
+		this.adcionar(elemento);
 	}
 	
-	public String toString() {
-		
-		StringBuilder s = new StringBuilder();
-		s.append("[");
-		
-		for(int i = 0; i < fila.length; i++) {
-			s.append(this.fila[i]);
-			if(i + 1 < fila.length) {
-				s.append(", ");
-			}
+	public T verInicio() {
+		return this.elementos[0];
+	}
+	
+	//metodo que irá remover o primeiro elemento da fila
+	public T removerDaFila() {
+		if(this.estarVazia()) {
+			System.out.println("Fila não existe");
 		}
-		s.append("]");
-		return s.toString();
+		//varivel que recebe o primeiro elemento da fila
+		T elementoRemovido = this.elementos[POSICAO];
+		this.remover(POSICAO); //FIFO
+		return elementoRemovido;
 	}
 	
 }

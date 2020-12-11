@@ -128,8 +128,7 @@ public class Lista<T> {
 	
 	public void limpa() {
 		
-		//this.elementos = (T[]) new Object[this.elementos.length];
-		
+		//this.elementos = (T[]) new Object[this.elementos.length];	
 		
 		for(int i = 0; i < this.qtd ; i++) {
 			this.elementos[i] = null;

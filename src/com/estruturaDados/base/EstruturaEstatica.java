@@ -51,8 +51,24 @@ public class EstruturaEstatica<T> {
 			}
 		}
 		
+		//retorna se a lista ou pilha esta vazia
+		public boolean estarVazia() {
+			//true se estiver vazio ou false se estiver com elemento.
+			return this.qtd == 0;
+		}
+		
 		public int tamanho() {
 			return this.qtd;
+		}
+		
+		public void remover(int posicao) {
+			if(posicao > this.qtd && posicao < 0 ) {
+				throw new IllegalArgumentException("Error! posição invalida");
+			}
+			for(int i = posicao; i < qtd - 1; i++) {
+				this.elementos[i] = this.elementos[i+1];
+			}
+			this.qtd--;
 		}
 		
 		// imprimir o vetor até o ultimo indice.

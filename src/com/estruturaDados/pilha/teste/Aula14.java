@@ -10,7 +10,7 @@ public class Aula14 {
 		Pilha<Integer>pilha = new Pilha<Integer>(10);
 		
 		
-		for(int i = 0; i < 10; i++) {
+		for(int i = 0; i < 15; i++) {
 			pilha.empilhar(i);
 			
 		}
